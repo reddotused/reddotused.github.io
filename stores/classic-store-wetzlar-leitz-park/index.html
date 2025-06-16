@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red Dot Used</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <!-- Glide Carousel -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/css/glide.core.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/css/glide.theme.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- jQuery (required for DataTables) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <header class="mb-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/">Leica Classic</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="bi bi-house-door"></i> Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/products/">
+                <i class="bi bi-grid"></i> All Products
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/products/tags/">
+                <i class="bi bi-tags"></i> Tags
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/stores/">
+                <i class="bi bi-shop"></i> Stores
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <main>
+    
+
+
+<article class="store-page">
+  <div class="store-header">
+    <h1>Classic Store Wetzlar (Leitz-Park)</h1>
+    <address>
+      Am Leitz-Park 5<br>35578 Wetzlar,<br>Germany<br>+49 (0) 6441 2080-605<br>classicstore.wetzlar@leica-camera.com
+    </address>
+  </div>
+
+  <div class="store-map">
+    <div id="osm-map" style="width: 100%; height: 400px;"></div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log("aqui!")
+        const address = `Am Leitz-Park 5
+35578 Wetzlar,
+Germany
++49 (0) 6441 2080-605
+classicstore.wetzlar@leica-camera.com`;
+        const cleanedAddress = address
+          .replace(/\+[\d\s()\-]+/g, '')           // Remove phone number (basic pattern)
+          .replace(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g, '') // Remove email
+          .replace(/^\s*[\r\n]/gm, '')             // Remove resulting empty lines
+        // Use a free geocoding service to get coordinates
+        fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(cleanedAddress)}&format=json&limit=1`)
+          .then(response => response.json())
+          .then(data => {
+            if (data.length > 0) {
+              const lat = parseFloat(data[0].lat);
+              const lon = parseFloat(data[0].lon);
+              
+              // Initialize OpenStreetMap
+              const map = L.map('osm-map').setView([lat, lon], 15);
+              
+              // Add OpenStreetMap tiles
+              L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+              }).addTo(map);
+              
+              // Add marker
+              L.marker([lat, lon]).addTo(map)
+                .bindPopup('Classic Store Wetzlar (Leitz-Park)')
+                .openPopup();
+            }
+          })
+          .catch(error => {
+            console.error('Error geocoding address:', error);
+          });
+      });
+    </script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  </div>
+
+  <div class="store-products">
+    <h2>Products (37)</h2>
+    
+    
+      <div class="products-grid">
+        
+          <div class="product-card">
+            <a href="/products/leica-sl2-black-10856-10856SH-5578982/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/65/2c/b1/1749890499/ee265c7ee0ae6132e75ca0877ca07927_1920x1920.jpeg?ts=1749890500" alt="Leica SL2, black 10856" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica SL2, black 10856</h3>
+                  <div class="product-price">€2,500.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/sl-system/" class="tag">SL-System</a>
+                      
+                        
+                        <a href="/products/tag/cameras/" class="tag">Cameras</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-sl2-s-back-10881-10881SH-5644831/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/fc/78/8b/1749826267/3e305760f4c900be09248a032932548a_1920x1920.jpeg?ts=1749826267" alt="Leica SL2-S, back 10881" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica SL2-S, back 10881</h3>
+                  <div class="product-price">€1,850.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/sl-system/" class="tag">SL-System</a>
+                      
+                        
+                        <a href="/products/tag/cameras/" class="tag">Cameras</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-sl2-black-10854-10854SH-5565086/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/d9/ed/52/1749824873/20bc762626e62502ef9d4d87ea32c1ff_1920x1920.jpeg?ts=1749824874" alt="Leica SL2, black 10854" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica SL2, black 10854</h3>
+                  <div class="product-price">€2,250.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/sl-system/" class="tag">SL-System</a>
+                      
+                        
+                        <a href="/products/tag/cameras/" class="tag">Cameras</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-sl2-black-10854-10854SH-5565560/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/11/d2/3e/1749292434/6ffd4b39cf50f2091adbfa87e2ee68cb_1920x1920.jpeg?ts=1749292435" alt="Leica SL2, black 10854" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica SL2, black 10854</h3>
+                  <div class="product-price">€2,750.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/sl-system/" class="tag">SL-System</a>
+                      
+                        
+                        <a href="/products/tag/cameras/" class="tag">Cameras</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-sl-typ-601-black-10850-10850SH-4964032/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/c0/g0/21/1749291588/11975d075b151d490a56dc2027f74037_1920x1920.jpeg?ts=1749291588" alt="Leica SL (Typ 601), black 10850" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica SL (Typ 601), black 10850</h3>
+                  <div class="product-price">€1,800.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/sl-system/" class="tag">SL-System</a>
+                      
+                        
+                        <a href="/products/tag/cameras/" class="tag">Cameras</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-v-lux-5-black-19122-19122SH-5525583/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/51/b3/65/1749027061/855c7fa991fe0822ecea985fc7812a43_1920x1920.jpeg?ts=1749027061" alt="Leica V-Lux 5, black 19122" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica V-Lux 5, black 19122</h3>
+                  <div class="product-price">€1,350.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/compact-cameras/" class="tag">Compact Cameras</a>
+                      
+                        
+                        <a href="/products/tag/cameras/" class="tag">Cameras</a>
+                      
+                        
+                        <a href="/products/tag/digital/" class="tag">Digital</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-v-lux-5-black-19122-19122SH-5525571/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/54/8c/ed/1749025175/a6523e9152502ddbc8c029531b403250_1920x1920.jpeg?ts=1749025204" alt="Leica V-Lux 5, black 19122" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica V-Lux 5, black 19122</h3>
+                  <div class="product-price">€1,350.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/compact-cameras/" class="tag">Compact Cameras</a>
+                      
+                        
+                        <a href="/products/tag/cameras/" class="tag">Cameras</a>
+                      
+                        
+                        <a href="/products/tag/digital/" class="tag">Digital</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-summilux-m-1-1-4-50mm-silver-chrom-11856-11856SH-3773238/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/ba/29/e6/1748442611/fcf3ca3bff3f0f1e0422780938cf39b3_1920x1920.jpeg?ts=1748442612" alt="Leica Summilux-M 1:1,4/50mm, silver chrom 11856" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica Summilux-M 1:1,4/50mm, silver chrom 11856</h3>
+                  <div class="product-price">€2,990.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/m-system/" class="tag">M-System</a>
+                      
+                        
+                        <a href="/products/tag/lenses/" class="tag">Lenses</a>
+                      
+                        
+                        <a href="/products/tag/standard-lenses/" class="tag">Standard-Lenses</a>
+                      
+                        
+                        <a href="/products/tag/summilux-m-1-4-50mm/" class="tag">Summilux-M 1,4/50mm</a>
+                      
+                        
+                        <a href="/products/tag/pre-asph-11868-11869-11856/" class="tag">Pre-Asph. 11868/11869/11856</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-summilux-m-1-1-4-21mm-asph-black-11647-11647SH-4098656/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/64/d7/e5/1748424036/2b64bfbd54dbce785b451111c38c98cb_1920x1920.jpeg?ts=1748424037" alt="Leica Summilux-M 1:1,4/21mm ASPH., black 11647" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica Summilux-M 1:1,4/21mm ASPH., black 11647</h3>
+                  <div class="product-price">€5,250.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/m-system/" class="tag">M-System</a>
+                      
+                        
+                        <a href="/products/tag/lenses/" class="tag">Lenses</a>
+                      
+                        
+                        <a href="/products/tag/wideangle-lenses/" class="tag">Wideangle-Lenses</a>
+                      
+                        
+                        <a href="/products/tag/summilux-m-1-4-21mm-asph/" class="tag">Summilux-M 1,4/21mm ASPH.</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-summicron-m-1-2-35mm-asph-balck-11879-11879SH-3865897/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/15/52/2f/1747991040/152fa0479bf019f11f6428a52aa3674d_1920x1920.jpeg?ts=1747991040" alt="Leica Summicron-M 1:2/35mm ASPH., balck 11879" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica Summicron-M 1:2/35mm ASPH., balck 11879</h3>
+                  <div class="product-price">€2,450.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/m-system/" class="tag">M-System</a>
+                      
+                        
+                        <a href="/products/tag/lenses/" class="tag">Lenses</a>
+                      
+                        
+                        <a href="/products/tag/wideangle-lenses/" class="tag">Wideangle-Lenses</a>
+                      
+                        
+                        <a href="/products/tag/summicron-m-2-35mm/" class="tag">Summicron-M 2/35mm</a>
+                      
+                        
+                        <a href="/products/tag/aspherical-11879-11609-11608/" class="tag">Aspherical 11879/11609/11608</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-s-typ-007-black-10804-10804SH-4952292/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/9c/65/5c/1743866002/c38a0a61cc6a46a89d2c369cc4d544c3_1920x1920.jpeg?ts=1743866002" alt="LEICA S (Typ 007), black 10804" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>LEICA S (Typ 007), black 10804</h3>
+                  <div class="product-price">€3,150.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/s-system/" class="tag">S-System</a>
+                      
+                        
+                        <a href="/products/tag/cameras/" class="tag">Cameras</a>
+                      
+                        
+                        <a href="/products/tag/s-(typ-006)-s-(typ-007)/" class="tag">S (typ 006) / S (typ 007)</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-summarit-m-1-2-5-75mm-black-11645-11645SH-4049066/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/62/e7/e3/1741351380/56c2871d7abaecca3ba1f6754db35ba9_1920x1920.jpeg?ts=1741351380" alt="Leica Summarit-M 1:2.5/75mm, black 11645" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica Summarit-M 1:2.5/75mm, black 11645</h3>
+                  <div class="product-price">€1,200.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/m-system/" class="tag">M-System</a>
+                      
+                        
+                        <a href="/products/tag/lenses/" class="tag">Lenses</a>
+                      
+                        
+                        <a href="/products/tag/tele-lenses/" class="tag">Tele-Lenses</a>
+                      
+                        
+                        <a href="/products/tag/summarit-m-2-5-75mm/" class="tag">Summarit-M 2,5/75mm</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-elpro-1-2-1-1-for-r-2-8-100-black-SH001-12528/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/14/b4/74/1740234849/795e33942555bd4fe6b3365f8e8ed696_1920x1920.jpeg?ts=1740234903" alt="Leica ELPRO 1:2-1:1 FOR R 2,8/100, black" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica ELPRO 1:2-1:1 FOR R 2,8/100, black</h3>
+                  <div class="product-price">€350.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/r-system/" class="tag">R-System</a>
+                      
+                        
+                        <a href="/products/tag/accessories/" class="tag">Accessories</a>
+                      
+                        
+                        <a href="/products/tag/adapter/" class="tag">Adapter</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leicaflex-black-paint-SH001-1168654/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/96/29/a7/1708080135/116b92257dbdeae79d498b1bd4974a55_1920x1920.jpeg?ts=1708080135" alt="Leicaflex, black paint" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leicaflex, black paint</h3>
+                  <div class="product-price">€2,650.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/r-system/" class="tag">R-System</a>
+                      
+                        
+                        <a href="/products/tag/cameras/" class="tag">Cameras</a>
+                      
+                        
+                        <a href="/products/tag/leicaflex-standard/" class="tag">Leicaflex Standard</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-vintage-folding-magnifier-jewelers-magnifier-SH001-2301202401/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/e5/a3/98/1739532765/c49033446d8396e885436fa499c7f752_1920x1920.jpeg?ts=1739532766" alt="Leica Vintage folding magnifier, jeweler&#39;s magnifier" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica Vintage folding magnifier, jeweler&#39;s magnifier</h3>
+                  <div class="product-price">€1,200.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/various-accessories/" class="tag">Various Accessories</a>
+                      
+                        
+                        <a href="/products/tag/various-accessories/" class="tag">Various Accessories</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-magnifier-59070-bras-SH011-00000/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/76/15/a8/1739531108/643f9f7b4bed3b5d827473613152b475_1920x1920.jpeg?ts=1739531109" alt="Leica magnifier 59070, bras" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica magnifier 59070, bras</h3>
+                  <div class="product-price">€580.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/various-accessories/" class="tag">Various Accessories</a>
+                      
+                        
+                        <a href="/products/tag/various-accessories/" class="tag">Various Accessories</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-s-typ-007-10804-10804SH-4952768/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/04/32/ea/1739376637/a0082a30c17a7fb9692483e7b468e659_1920x1920.jpeg?ts=1739376638" alt="Leica S (Typ 007), 10804" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica S (Typ 007), 10804</h3>
+                  <div class="product-price">€3,200.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/s-system/" class="tag">S-System</a>
+                      
+                        
+                        <a href="/products/tag/cameras/" class="tag">Cameras</a>
+                      
+                        
+                        <a href="/products/tag/s-(typ-006)-s-(typ-007)/" class="tag">S (typ 006) / S (typ 007)</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-summicron-m-1-2-35-mm-asph-black-11879-11879SH-3978751/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/88/a7/d2/1737646315/d1c2082281f28a6c5ef5167289a833e0_1920x1920.jpeg?ts=1737646316" alt="Leica Summicron-M 1:2/35 mm ASPH., black 11879" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica Summicron-M 1:2/35 mm ASPH., black 11879</h3>
+                  <div class="product-price">€2,350.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/m-system/" class="tag">M-System</a>
+                      
+                        
+                        <a href="/products/tag/lenses/" class="tag">Lenses</a>
+                      
+                        
+                        <a href="/products/tag/wideangle-lenses/" class="tag">Wideangle-Lenses</a>
+                      
+                        
+                        <a href="/products/tag/summicron-m-2-35mm/" class="tag">Summicron-M 2/35mm</a>
+                      
+                        
+                        <a href="/products/tag/aspherical-11879-11609-11608/" class="tag">Aspherical 11879/11609/11608</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-vitre-torpedo-finder-black-paint-SH001-15102024001/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/e8/ce/97/1732281733/d5818491c34e1ec2b089163c8490c325_1920x1920.jpeg?ts=1732281905" alt="Leica VITRE Torpedo finder, black paint" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica VITRE Torpedo finder, black paint</h3>
+                  <div class="product-price">€1,200.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/m-system/" class="tag">M-System</a>
+                      
+                        
+                        <a href="/products/tag/accessories/" class="tag">Accessories</a>
+                      
+                        
+                        <a href="/products/tag/finder/" class="tag">Finder</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-sofort-red-19160-SH001-1411202402/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/9f/52/92/1732268453/041540f5f2e241051edbaa562f0bbe88_1920x1920.jpeg?ts=1732268453" alt="Leica Sofort, red 19160" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica Sofort, red 19160</h3>
+                  <div class="product-price">€400.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/compact-cameras/" class="tag">Compact Cameras</a>
+                      
+                        
+                        <a href="/products/tag/cameras/" class="tag">Cameras</a>
+                      
+                        
+                        <a href="/products/tag/analog/" class="tag">Analog</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-apo-elmar-s-1-3-5-180mm-11071-11071SH-4143539/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/be/97/65/1720185604/70c368ece84669adadda08873b492e23_1920x1920.jpeg?ts=1720185604" alt="Leica APO-ELMAR-S 1:3.5/180mm 11071" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica APO-ELMAR-S 1:3.5/180mm 11071</h3>
+                  <div class="product-price">€2,700.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/s-system/" class="tag">S-System</a>
+                      
+                        
+                        <a href="/products/tag/lenses/" class="tag">Lenses</a>
+                      
+                        
+                        <a href="/products/tag/apo-elmar-s-3-5-180mm/" class="tag">Apo-Elmar-S 3,5/180mm</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-elmarit-m-1-2-8-21-mm-asph-11135SH-3786938/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/bf/74/2e/1714838347/003598fdccc101332072b1bce2a97641_1920x1920.jpeg?ts=1714838348" alt="Leica Elmarit-M 1:2.8/21 mm ASPH." class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica Elmarit-M 1:2.8/21 mm ASPH.</h3>
+                  <div class="product-price">€2,050.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/m-system/" class="tag">M-System</a>
+                      
+                        
+                        <a href="/products/tag/lenses/" class="tag">Lenses</a>
+                      
+                        
+                        <a href="/products/tag/wideangle-lenses/" class="tag">Wideangle-Lenses</a>
+                      
+                        
+                        <a href="/products/tag/elmarit-m-2-8-21mm/" class="tag">Elmarit-M 2,8/21mm</a>
+                      
+                        
+                        <a href="/products/tag/asph-11135-11897/" class="tag">ASPH 11135/11897</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-summarit-s-1-2-5-35mm-asph-11064-11064SH-4145110/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/31/de/74/1711798318/025c9b75edc65d5a5791563e468e8045_1920x1920.jpeg?ts=1711798318" alt="Leica SUMMARIT-S 1:2.5/35mm ASPH. 11064" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica SUMMARIT-S 1:2.5/35mm ASPH. 11064</h3>
+                  <div class="product-price">€1,980.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/s-system/" class="tag">S-System</a>
+                      
+                        
+                        <a href="/products/tag/lenses/" class="tag">Lenses</a>
+                      
+                        
+                        <a href="/products/tag/summarit-s-2-5-35mm-asph/" class="tag">Summarit-S 2,5/35mm ASPH.</a>
+                      
+                        
+                        <a href="/products/tag/cs/" class="tag">CS</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-summarit-s-1-2-5-35mm-asph-11064-11064SH-4096025/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/04/6b/2d/1711796344/4ff558145a14cc0f08ea4e04e974ec44_1920x1920.jpeg?ts=1711796345" alt="Leica SUMMARIT-S 1:2.5/35mm ASPH. 11064" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica SUMMARIT-S 1:2.5/35mm ASPH. 11064</h3>
+                  <div class="product-price">€1,780.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/s-system/" class="tag">S-System</a>
+                      
+                        
+                        <a href="/products/tag/lenses/" class="tag">Lenses</a>
+                      
+                        
+                        <a href="/products/tag/summarit-s-2-5-35mm-asph/" class="tag">Summarit-S 2,5/35mm ASPH.</a>
+                      
+                        
+                        <a href="/products/tag/cs/" class="tag">CS</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-elmarit-s-1-2-8-30mm-asph-11073-11073SH-4143166/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/10/4c/16/1711641046/547b9c5c7e49f5f6714eb6a276d91ffb_1920x1920.jpeg?ts=1711641046" alt="Leica ELMARIT-S 1:2.8/30mm ASPH. 11073" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica ELMARIT-S 1:2.8/30mm ASPH. 11073</h3>
+                  <div class="product-price">€1,930.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/s-system/" class="tag">S-System</a>
+                      
+                        
+                        <a href="/products/tag/lenses/" class="tag">Lenses</a>
+                      
+                        
+                        <a href="/products/tag/elmarit-s-2-8-30mm-asph/" class="tag">Elmarit-S 2,8/30mm ASPH.</a>
+                      
+                        
+                        <a href="/products/tag/cs/" class="tag">CS</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-sf-58-system-flash-SH001-59186/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/48/e2/55/1709398742/66a2fe216b50d3927f4320f8a577d68c_1920x1920.jpeg?ts=1709398743" alt="Leica SF 58 System Flash" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica SF 58 System Flash</h3>
+                  <div class="product-price">€320.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/various-accessories/" class="tag">Various Accessories</a>
+                      
+                        
+                        <a href="/products/tag/flashes/" class="tag">Flashes</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-m6-cutaway-SH001-2179813/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/fa/49/ff/1704207989/0db250ab22e905367e7d3a3e28938098_1920x1920.jpeg?ts=1704207990" alt="Leica M6 Cutaway" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica M6 Cutaway</h3>
+                  <div class="product-price">€9,950.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/m-system/" class="tag">M-System</a>
+                      
+                        
+                        <a href="/products/tag/cameras/" class="tag">Cameras</a>
+                      
+                        
+                        <a href="/products/tag/m6/" class="tag">M6</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-m4-black-paint-SH001-1266555/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/fa/0b/2f/1702128837/b389b3284f30ddb6311b1f59237644f2_1920x1920.jpeg?ts=1702128838" alt="Leica M4 Black Paint" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica M4 Black Paint</h3>
+                  <div class="product-price">€9,400.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/m-system/" class="tag">M-System</a>
+                      
+                        
+                        <a href="/products/tag/cameras/" class="tag">Cameras</a>
+                      
+                        
+                        <a href="/products/tag/m4/" class="tag">M4</a>
+                      
+                        
+                        <a href="/products/tag/painted/" class="tag">Painted</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-m3-leitz-eigentum-SH001-778789/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/c2/df/f4/1702124786/de6e7e87f2283d9798f8d2da84f8484d_1920x1920.jpeg?ts=1702124787" alt="Leica M3 &quot;Leitz-Eigentum&quot;" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica M3 &quot;Leitz-Eigentum&quot;</h3>
+                  <div class="product-price">€12,500.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/m-system/" class="tag">M-System</a>
+                      
+                        
+                        <a href="/products/tag/cameras/" class="tag">Cameras</a>
+                      
+                        
+                        <a href="/products/tag/m3/" class="tag">M3</a>
+                      
+                        
+                        <a href="/products/tag/double-stroke/" class="tag">Double Stroke</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-m2-betriebsk-2006-button-rewind-10300-10300SH-2006/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/fc/db/f5/1698833619/a94c364d6ed95f7fa3872c4a2d65eaeb_1920x1920.jpeg?ts=1698833620" alt="Leica M2 Betriebsk. #2006 Button Rewind 10300" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica M2 Betriebsk. #2006 Button Rewind 10300</h3>
+                  <div class="product-price">€13,950.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/m-system/" class="tag">M-System</a>
+                      
+                        
+                        <a href="/products/tag/cameras/" class="tag">Cameras</a>
+                      
+                        
+                        <a href="/products/tag/m2/" class="tag">M2</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-super-elmar-r-1-3-5-15mm-11213SH-3309022/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/84/0f/48/1691586984/dccb1b7ddf99fea553e1869b7bd5dd77_1920x1920.jpeg?ts=1691586985" alt="Leica Super-Elmar-R 1:3,5/15mm" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica Super-Elmar-R 1:3,5/15mm</h3>
+                  <div class="product-price">€1,790.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/r-system/" class="tag">R-System</a>
+                      
+                        
+                        <a href="/products/tag/lenses/" class="tag">Lenses</a>
+                      
+                        
+                        <a href="/products/tag/wideangle-lenses/" class="tag">Wideangle-Lenses</a>
+                      
+                        
+                        <a href="/products/tag/super-elmar-r-3-5-15mm/" class="tag">Super-Elmar-R 3,5/15mm</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-farux-panorama-head-SH011-CS01247/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/da/1b/c5/1689342850/8b6f8123db4332389be937976ff22850_1920x1920.jpeg?ts=1689342851" alt="Leica FARUX panorama head" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica FARUX panorama head</h3>
+                  <div class="product-price">€230.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/various-accessories/" class="tag">Various Accessories</a>
+                      
+                        
+                        <a href="/products/tag/focussing-stages/" class="tag">Focussing Stages</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-apo-telyt-r-1-2-8-400mm-11260SH-3596929/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/0b/d0/2d/1686666631/1a580e8eaf583aca749f70c773557d0e_1920x1920.jpeg?ts=1686666632" alt="Leica APO-Telyt-R 1:2,8/400mm" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica APO-Telyt-R 1:2,8/400mm</h3>
+                  <div class="product-price">€7,700.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/r-system/" class="tag">R-System</a>
+                      
+                        
+                        <a href="/products/tag/lenses/" class="tag">Lenses</a>
+                      
+                        
+                        <a href="/products/tag/tele-lenses/" class="tag">Tele-Lenses</a>
+                      
+                        
+                        <a href="/products/tag/apo-telyt-r-2-8-400mm/" class="tag">Apo-Telyt-R 2,8/400mm</a>
+                      
+                        
+                        <a href="/products/tag/11260/" class="tag">11260</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-stereo-attachment-stereoly-SH001-1412202209/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/db/0f/06/1682164570/edd3f2eb5f6a4655eeb1de660bc92495_1920x1920.jpeg?ts=1682164571" alt="Leica Stereo attachment Stereoly" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica Stereo attachment Stereoly</h3>
+                  <div class="product-price">€750.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/screw-mount-system/" class="tag">Screw-Mount System</a>
+                      
+                        
+                        <a href="/products/tag/accessories/" class="tag">Accessories</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leitz-laboratory-flask-SH011-08042023/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/cb/7a/bd/1680952525/00536228cef3a7b0f13cfdd807d6a65f_1920x1920.jpeg?ts=1680968878" alt="Leitz Laboratory Flask" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leitz Laboratory Flask</h3>
+                  <div class="product-price">€500.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/various-accessories/" class="tag">Various Accessories</a>
+                      
+                        
+                        <a href="/products/tag/various-accessories/" class="tag">Various Accessories</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-hektor-1-2-5-125mm-chrome-hikoo-SH001-1760025/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/0e/7e/5d/1680685104/84e24879448deab132dad2d2c94049bd_1920x1920.jpeg?ts=1680685105" alt="Leica Hektor 1:2,5/125mm, chrome HIKOO" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica Hektor 1:2,5/125mm, chrome HIKOO</h3>
+                  <div class="product-price">€700.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/visoflex-system/" class="tag">Visoflex-System</a>
+                      
+                        
+                        <a href="/products/tag/lenses/" class="tag">Lenses</a>
+                      
+                        
+                        <a href="/products/tag/hektor-2-5-125mm/" class="tag">Hektor 2,5/125mm</a>
+                      
+                        
+                        <a href="/products/tag/hikoo/" class="tag">HIKOO</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="product-card">
+            <a href="/products/leica-scnoo-chrome-SH001-1312202203/" class="product-link">
+              <div class="product-content">
+                
+                  <div class="product-image-container">
+                    <img src="https://classic.leica-camera.com/thumbnail/7d/03/e2/1673089936/cda54721d3788d9b2ffeb27ad8408f9d_1920x1920.jpeg?ts=1673089937" alt="Leica SCNOO, chrome" class="product-image">
+                  </div>
+                
+                <div class="product-info">
+                  <h3>Leica SCNOO, chrome</h3>
+                  <div class="product-price">€900.00</div>
+                  
+                    <div class="tags">
+                      
+                        
+                        <a href="/products/tag/leica-systems/" class="tag">Leica Systems</a>
+                      
+                        
+                        <a href="/products/tag/screw-mount-system/" class="tag">Screw-Mount System</a>
+                      
+                        
+                        <a href="/products/tag/accessories/" class="tag">Accessories</a>
+                      
+                        
+                        <a href="/products/tag/winder/" class="tag">Winder</a>
+                      
+                    </div>
+                  
+                </div>
+              </div>
+            </a>
+          </div>
+        
+      </div>
+    
+  </div>
+</article>
+
+<style>
+.store-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.store-header {
+  margin-bottom: 3rem;
+}
+
+.store-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.store-header address {
+  font-style: normal;
+  color: #666;
+  margin: 0;
+}
+
+.store-products h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.store-map {
+  width: 100%;
+  height: 400px;
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-content {
+  padding: 1.5rem;
+}
+
+.product-image-container {
+  position: relative;
+  padding-top: 75%; /* 4:3 aspect ratio */
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 1.5rem;
+}
+
+.product-info h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  display: inline-block;
+  background: #f0f0f0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #333;
+}
+
+.tag:hover {
+  background: #e0e0e0;
+}
+
+.no-products {
+  text-align: center;
+  color: #666;
+  padding: 2rem;
+}
+</style>
+
+  </main>
+  
+  <footer class="bg-dark text-light py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Leica Classic</h5>
+          <p class="mb-0">Your trusted source for Leica camera gear and accessories.</p>
+        </div>
+        <div class="col-md-3">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="/" class="text-light">Home</a></li>
+            <li><a href="/products/" class="text-light">Products</a></li>
+            <li><a href="/products/tags/" class="text-light">Tags</a></li>
+            <li><a href="/stores/" class="text-light">Stores</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Connect</h5>
+          <div class="d-flex gap-3 mb-3">
+            <a href="#" class="text-light"><i class="bi bi-facebook fs-4"></i></a>
+            <a href="#" class="text-light"><i class="bi bi-twitter-x fs-4"></i></a>
+            <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-secondary">
+      <div class="row">
+        <div class="col-12 text-center">
+          <p class="small mb-0">&copy; 2025 Leica Classic. All rights reserved.</p>
+          <p class="small text-muted mb-0">
+            This site is not affiliated with Leica Camera AG. All trademarks are the property of their respective owners. 
+            Data is sourced from public Leica Store listings.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Glide Carousel -->
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0"></script>
+  <script src="/js/carousel.js"></script>
+  
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  
+</body>
+</html>
